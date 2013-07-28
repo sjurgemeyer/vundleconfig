@@ -1,4 +1,4 @@
-This is a simple vim plugin to automatically load config files for plugins loaded with Vundle.
+This is a simple vim plugin to automatically load config files for plugins loaded with [Vundle](https://github.com/gmarik/vundle).
 
 I've found it useful to keep separate files for plugin configuration to make them easier to
 manage.  This plugin will load configuration files located in a specified directory based on the bundle name.
