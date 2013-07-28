@@ -3,8 +3,8 @@ This is a simple vim plugin to automatically load config files for plugins loade
 I've found it useful to keep separate files for plugin configuration to make them easier to
 manage.  This plugin will load configuration files located in a specified directory based on the bundle name.
 
-The config files should be named <pluginName>.vim and should be located in the ~/.vim/config directory, 
-where <pluginName> is the plugin name without any 'vim' prefix or suffix.  For example if you have the following 
+The config files should be named pluginName.vim and should be located in the ~/.vim/config directory, 
+where pluginName is the plugin name without any 'vim' prefix or suffix.  For example if you have the following 
 config:
 ```
 Bundle 'tpope/vim-fugitive.git'
