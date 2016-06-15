@@ -1,4 +1,4 @@
-function! BundleWithConfig(...) 
+function! BundleWithConfig(...)
     call vundle#config#bundle(a:1)
     let lastPart = split(a:1, '/')[-1]
     let configName = GetNiceBundleName(lastPart) . '.vim'
@@ -13,7 +13,7 @@ function! BundleWithConfig(...)
     endif
 endfunction
 
-function! GetNiceBundleName(name) 
+function! GetNiceBundleName(name)
     let splitName = split(a:name, '[-\.]')
     for x in splitName
         if x != 'vim'
@@ -22,7 +22,7 @@ function! GetNiceBundleName(name)
     endfor
 endfunction
 
-com! -nargs=+         Bundle
+com! -nargs=+         Plugin
 \ call BundleWithConfig(<args>)
 
 func! vundleconfig#init(...) abort
