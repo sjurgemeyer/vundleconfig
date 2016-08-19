@@ -1,7 +1,7 @@
 function! BundleWithConfig(...)
     call vundle#config#bundle(a:1)
-    let lastPart = split(a:1, '/')[-1]
-    let configName = GetNiceBundleName(lastPart) . '.vim'
+    let filename = split(a:1, '/')[-1]
+    let configName = GetNiceBundleName(filename)
     let configFolder = '~/.vim/config/'
 
     let paths = globpath(configFolder, configName, 1)
@@ -14,12 +14,15 @@ function! BundleWithConfig(...)
 endfunction
 
 function! GetNiceBundleName(name)
-    let splitName = split(a:name, '[-\.]')
+    let splitName = split(a:name, '[-]')
+	let result = ''
     for x in splitName
         if x != 'vim'
-            return x
+			let result = result . '-' . x
         endif
     endfor
+    let baseName = split(result, '[\.]')[0]
+	return strpart(baseName, 1) . '.vim'
 endfunction
 
 com! -nargs=+         Plugin
